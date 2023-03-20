@@ -111,10 +111,12 @@ public class Book implements IShop {
         setBookId(InputMethods.getInteger());
         System.out.print("Nhập tên sách: ");
         setBookName(InputMethods.getString());
-        System.out.print("Nhập giá bán sách: ");
-        setImportPrice(InputMethods.getFloat());
+        System.out.print("Nhập tiêu đề sách: ");
+        setTitle(InputMethods.getString());
         System.out.print("Nhập số trang sách: ");
         setNumberOfPages(InputMethods.getInteger());
+        System.out.print("Nhập giá bán sách: ");
+        setImportPrice(InputMethods.getFloat());
         System.out.print("Nhập số lượng sách: ");
         setQuantity(InputMethods.getInteger());
         System.out.print("Nhập trạng thái: ");
@@ -156,7 +158,8 @@ public class Book implements IShop {
         System.out.printf("Mã sách: %-20d ,Tên sách: %-20s ,Tên tác giả: %-20s\n" +
                         "Giá sách: %-20.2f , Số lượng: %-20d\n" +
                         "Trạng thái: %-20s\n",
-                getBookId(), getBookName(), getAuthor().getAuthorName(),
+                getBookId(), getBookName(),
+                (getAuthor() == null ? "Không có thông tin tác giả" : getAuthor().getAuthorName()),
                 getExportPrice(), getQuantity(),
                 (isBookStatus() ? "Còn sách" : "Hết sách")
         );

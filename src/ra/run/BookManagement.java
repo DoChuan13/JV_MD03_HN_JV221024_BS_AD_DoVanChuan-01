@@ -95,6 +95,10 @@ public class BookManagement {
         boolean flag = false;
         for (int i = 0; i < bookListSize; i++) {
             Book book = booksList.get(i);
+            if (book.getAuthor()==null){
+                System.err.println("Sách không có thông tin tác giả");
+                return;
+            }
             if (book.getAuthor().getAuthorName().equals(author)) {
                 flag = true;
                 break;
